@@ -1,0 +1,44 @@
+<!--
+ - Created by Bogdan on 08.10.2020.
+ -->
+
+<!-- Paginator Button -->
+<template>
+  <lightning-layout>
+    <lightning-layout-item>
+      <lightning-button
+          label="First"
+          icon-name="utility:left"
+          onclick={handleFirst}
+      ></lightning-button>
+      <lightning-button
+          label="Previous"
+          icon-name="utility:chevronleft"
+          onclick={handlePrevious}
+      ></lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item flexibility="grow"></lightning-layout-item>
+    <lightning-layout-item >
+      <lightning-button-menu label="Page size"  variant="border-filled" onselect={handleOnselect}>
+        <lightning-menu-item value="2" label="2"></lightning-menu-item>
+        <lightning-menu-item value="5" label="5"></lightning-menu-item>
+        <lightning-menu-item value="10" label="10"></lightning-menu-item>
+      </lightning-button-menu>
+    </lightning-layout-item>
+    <lightning-layout-item flexibility="grow"></lightning-layout-item>
+    <lightning-layout-item>
+      <lightning-button
+          label="Next"
+          icon-name="utility:chevronright"
+          icon-position="right"
+          onclick={handleNext}
+      ></lightning-button>
+      <lightning-button
+          label="Last"
+          icon-name="utility:right"
+          icon-position="right"
+          onclick={handleLast}
+      ></lightning-button>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

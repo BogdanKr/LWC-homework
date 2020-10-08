@@ -1,0 +1,40 @@
+<!--
+ - Created by Bogdan on 08.10.2020.
+ -->
+
+<!-- Paginator Contact List -->
+<template>
+
+  <lightning-card icon-name="custom:contact_list">
+    <div slot="title">
+      Contact List, page {currentPage} / {totalPages}
+    </div>
+    <template if:true={data}>
+      <lightning-layout class="slds-var-m-around_medium">
+        <lightning-layout-item>
+
+          <div style="height: 300px;">
+            <lightning-datatable
+                hide-checkbox-column
+                key-field="Id"
+                data={data}
+                columns={columns}>
+            </lightning-datatable>
+          </div>
+
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+    <template if:true={error}>
+      There are no contacts!
+    </template>
+
+    <c-paginator-button
+        onfirst={handleFirst}
+        onprevious={handlePrevious}
+        onnext={handleNext}
+        onlast={handleLast}
+        onselect={handleSelect}>
+    </c-paginator-button>
+  </lightning-card>
+</template>
