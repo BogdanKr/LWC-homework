@@ -8,8 +8,18 @@
     <c-countries-api-search-form
         onfindcountries={handleFindCountries}>
     </c-countries-api-search-form>
+    <div slot="actions">
+      <lightning-button
+          disabled={isDisabledButton}
+          label="Show modal"
+          onclick={handleShowModal}
+      ></lightning-button>
+    </div>
 
     <c-countries-api-table countries={data}>
     </c-countries-api-table>
   </lightning-card>
+
+  <c-countries-api-modal countries={data}>
+  </c-countries-api-modal>
 </template>

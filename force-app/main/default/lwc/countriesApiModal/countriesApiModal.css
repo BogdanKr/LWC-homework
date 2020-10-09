@@ -1,0 +1,15 @@
+/**
+ * Created by Bogdan on 09.10.2020.
+ */
+.country-tile {
+    border: 1px solid #4ea230;
+    background-color: #64f874;
+    border-radius: .25rem;
+    display: block;
+}
+.country-tile-body {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 80%, #64f874 100%);
+}
+.country-flag {
+    height: 50px;
+}

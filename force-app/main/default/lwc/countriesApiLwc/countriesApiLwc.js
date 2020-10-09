@@ -12,6 +12,7 @@ export default class CountriesApiLwc extends LightningElement {
   searchType;
   data;
   error;
+  isDisabledButton = true;
 
   handleFindCountries(event) {
     this.searchKey = event.detail.searchKey;
@@ -25,10 +26,13 @@ export default class CountriesApiLwc extends LightningElement {
       this.data = data;
       this.error = error;
       this.showToast('success');
+      this.isDisabledButton = false;
     }
     if (error) {
-      this.data='';
+      this.data = '';
       this.showToast('error');
+      this.isDisabledButton = true;
+
     }
   };
 
@@ -49,4 +53,10 @@ export default class CountriesApiLwc extends LightningElement {
     }
     this.dispatchEvent(evt);
   }
+
+  handleShowModal() {
+    const modal = this.template.querySelector('c-countries-api-modal');
+    modal.show();
+  }
+
 }
