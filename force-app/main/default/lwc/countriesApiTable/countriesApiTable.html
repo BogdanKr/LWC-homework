@@ -1,0 +1,25 @@
+<!--
+ - Created by Bogdan on 09.10.2020.
+ -->
+
+<!-- Countries Api Table -->
+<template>
+  <template if:true={countries}>
+    <lightning-layout class="slds-var-m-around_medium">
+      <lightning-layout-item>
+        <div>
+          <lightning-datatable
+              hide-checkbox-column
+              key-field="Id"
+              data={countries}
+              columns={columns}>
+          </lightning-datatable>
+        </div>
+
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
+  <template if:false= {countries}>
+    There are no countries!
+  </template>
+</template>

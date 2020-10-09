@@ -1,0 +1,15 @@
+<!--
+ - Created by Bogdan on 08.10.2020.
+ -->
+
+<!-- Countries Api Lwc -->
+<template>
+  <lightning-card title="Country search form" icon-name="custom:contact_list">
+    <c-countries-api-search-form
+        onfindcountries={handleFindCountries}>
+    </c-countries-api-search-form>
+
+    <c-countries-api-table countries={data}>
+    </c-countries-api-table>
+  </lightning-card>
+</template>
